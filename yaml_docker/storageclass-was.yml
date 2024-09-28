@@ -1,0 +1,54 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: sc-was-login  
+provisioner: efs.csi.aws.com
+parameters:
+  provisioningMode: efs-ap
+  fileSystemId: fs-05f0e46aec263fa2a
+  directoryPerms: "700"  
+  basePath: "/dynamic_provisioning/login"
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: sc-was-main  
+provisioner: efs.csi.aws.com
+parameters:
+  provisioningMode: efs-ap
+  fileSystemId: fs-05f0e46aec263fa2a
+  directoryPerms: "700"  
+  basePath: "/dynamic_provisioning/main"
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: sc-was-order  
+provisioner: efs.csi.aws.com
+parameters:
+  provisioningMode: efs-ap
+  fileSystemId: fs-05f0e46aec263fa2a
+  directoryPerms: "700"  
+  basePath: "/dynamic_provisioning/order"
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: sc-was-reservation
+provisioner: efs.csi.aws.com
+parameters:
+  provisioningMode: efs-ap
+  fileSystemId: fs-05f0e46aec263fa2a
+  directoryPerms: "700"  
+  basePath: "/dynamic_provisioning/reservation"
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: sc-was-signup  
+provisioner: efs.csi.aws.com
+parameters:
+  provisioningMode: efs-ap
+  fileSystemId: fs-05f0e46aec263fa2a
+  directoryPerms: "700"  
+  basePath: "/dynamic_provisioning/signup"
