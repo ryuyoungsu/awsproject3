@@ -1,0 +1,74 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-web-login
+  namespace: web
+spec:
+  type: NodePort
+  clusterIP: 172.20.20.20
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30100
+  selector:
+    app: web-login
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-web-main
+  namespace: web
+spec:
+  type: NodePort
+  clusterIP: 172.20.20.40
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30200
+  selector:
+    app: web-main
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-web-order
+  namespace: web
+spec:
+  type: NodePort
+  clusterIP: 172.20.20.60
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30300
+  selector:
+    app: web-order
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-web-reservation
+  namespace: web
+spec:
+  type: NodePort
+  clusterIP: 172.20.20.80
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30400
+  selector:
+    app: web-reservation
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-web-signup
+  namespace: web
+spec:
+  type: NodePort
+  clusterIP: 172.20.20.40
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30200
+  selector:
+    app: web-signup
