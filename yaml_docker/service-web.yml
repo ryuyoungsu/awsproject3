@@ -65,10 +65,10 @@ metadata:
   namespace: web
 spec:
   type: NodePort
-  clusterIP: 172.20.20.40
+  clusterIP: 172.20.20.100
   ports:
   - port: 80
     targetPort: 80
-    nodePort: 30200
+    nodePort: 30500
   selector:
     app: web-signup
