@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-was-login
+  namespace: was
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: sc-was-login
+  resources:
+    requests:
+      storage: 2Gi
+

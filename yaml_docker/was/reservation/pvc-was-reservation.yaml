@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-was-reservation
+  namespace: was
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: sc-was-reservation
+  resources:
+    requests:
+      storage: 2Gi
+

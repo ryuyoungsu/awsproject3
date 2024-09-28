@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: yas24
+  namespace: web
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:730335572979:certificate/6b4970a1-ed84-4bac-942b-3c4ef307897b
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+spec:
+  ingressClassName: alb
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-web-main
+            port:
+              number: 80
+      - path: /signup.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-web-signup
+            port:
+              number: 80
+      - path: /order.jsp
+        pathType: Prefix
+        backend:
+          service:
+            name: svc-web-order
+            port:
+              number: 80
+                
+
